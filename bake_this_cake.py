@@ -17,6 +17,8 @@ def cakes(recipe, available):
     """
     number_of_cakes = []
     for ingredient in recipe:
+        if recipe[ingredient] == 0:
+          continue
         if ingredient in available:
             cakes_from_ingredient = available[ingredient] // recipe[ingredient]
             number_of_cakes.append(cakes_from_ingredient)
